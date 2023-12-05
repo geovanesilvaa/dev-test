@@ -1,0 +1,46 @@
+.container {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.divContainer {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid tomato;
+}
+
+.divContainer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.divContainer {
+  font-size: 1.5rem;
+}
+
+.divContainer button {
+  width: 20%;
+  margin: 5px;
+  padding: 5px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.divContainer a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.error_Message {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}

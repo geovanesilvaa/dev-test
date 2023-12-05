@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  padding: 1rem 2rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: tomato;
+}
+
+.navTitle a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.navTitle h2 {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.navTitle img {
+  height: 60px;
+}
+
+.navList a {
+  color: #000;
+  padding: 10px;
+  margin-left: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navList a:hover {
+  color: #000;
+  border-radius: 5px;
+  transition: 0.5s;
+  background-color: #fff;
+}

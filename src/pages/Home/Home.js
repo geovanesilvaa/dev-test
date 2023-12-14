@@ -14,7 +14,6 @@ const Home = () => {
       {loading && <Loading />}
 
       {error && <h3 className={styles.error_Message}>{error}</h3>}
-\
       {!error && (
         <ul className={styles.container_Users}>
           {data.map((user) => (

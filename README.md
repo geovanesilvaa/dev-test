@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# 🚀 Guia para Rodar o Projeto React Native com Expo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Pré-requisitos
+Antes de iniciar, certifique-se de ter instalado:
 
-## Available Scripts
+- **Node.js** 🟢 ([Baixar aqui](https://nodejs.org/))
+- **Expo CLI** 🌎 (`npm install -g expo-cli`)
+- **Android Studio** 🤖 ([Baixar aqui](https://developer.android.com/studio))
+- **Emulador configurado** 📱 (ou dispositivo físico com o aplicativo Expo Go instalado)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🏁 Passo a Passo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1️⃣ Abrir o Emulador Android
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Abrir o Android Studio** ⚙️
+2. Ir até **AVD Manager** (Android Virtual Device) 📱
+3. Selecionar um emulador configurado e clicar em **Start** ▶️
 
-### `npm test`
+💡 **Dica:** Se o AVD Manager não aparecer, acesse via terminal:
+```sh
+cd ~/Android/Sdk/emulator
+./emulator -list-avds  # Lista os emuladores disponíveis
+./emulator -avd NOME_DO_EMULADOR
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### 2️⃣ Iniciar o Projeto Expo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navegue até a pasta do projeto 📂
+   ```sh
+   cd caminho/do/projeto
+   ```
+2. Instale as dependências 🔄
+   ```sh
+   npm install
+   ```
+   ou, se estiver usando Yarn:
+   ```sh
+   yarn install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3️⃣ Iniciar o Servidor Expo
 
-### `npm run eject`
+O **Expo Dev Server** precisa estar rodando antes de iniciar o aplicativo:
+```sh
+npx expo start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Isso abrirá uma interface no navegador onde você pode escolher rodar no **Emulador Android**, **iOS** (se estiver no Mac) ou em um dispositivo físico. ⚡
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4️⃣ Rodar o Aplicativo no Emulador
+Com o emulador ativo, pressione **"Run on Android device/emulator"** na interface do Expo ou execute:
+```sh
+npx expo run:android
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🔄 Aguarde a compilação e pronto! O app será iniciado no emulador. 🎉
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠️ Possíveis Erros e Soluções
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+❌ **Erro: "SDK location not found"**
+🔹 Solução: Configure o caminho do SDK no `local.properties` do Android Studio:
+```
+sdk.dir=/Users/seu_usuario/Library/Android/sdk  # Mac/Linux
+sdk.dir=C:\Users\seu_usuario\AppData\Local\Android\Sdk  # Windows
+```
 
-### Code Splitting
+❌ **Erro: "No connected devices!"**
+🔹 Solução: Certifique-se de que o emulador está ativo ou conecte um dispositivo físico com **Expo Go** instalado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🎯 Comandos Úteis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| Comando | Descrição |
+|---------|------------|
+| `npx expo start` | Inicia o servidor do Expo 🚀 |
+| `npx expo run:android` | Roda o app no emulador 🤖 |
+| `adb devices` | Lista os dispositivos conectados 📱 |
+| `npx expo logs` | Mostra logs do app no terminal 📜 |
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+💡 **Agora você está pronto para rodar seu app Expo no emulador!** 🚀
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

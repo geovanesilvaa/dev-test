@@ -1,81 +1,77 @@
-# 🚀 Guia para Rodar o Projeto React Native com Expo
+# 🚀 Guia para Rodar o Projeto React.js
 
 ## 📌 Pré-requisitos
 Antes de iniciar, certifique-se de ter instalado:
 
 - **Node.js** 🟢 ([Baixar aqui](https://nodejs.org/))
-- **Expo CLI** 🌎 (`npm install -g expo-cli`)
-- **Android Studio** 🤖 ([Baixar aqui](https://developer.android.com/studio))
-- **Emulador configurado** 📱 (ou dispositivo físico com o aplicativo Expo Go instalado)
+- **Gerenciador de pacotes** (NPM ou Yarn)
+- **Um navegador atualizado** 🌐 (Google Chrome, Firefox, Edge, etc.)
 
 ---
 
 ## 🏁 Passo a Passo
 
-### 1️⃣ Abrir o Emulador Android
+### 1️⃣ Criar ou Navegar até o Projeto React.js
 
-1. **Abrir o Android Studio** ⚙️
-2. Ir até **AVD Manager** (Android Virtual Device) 📱
-3. Selecionar um emulador configurado e clicar em **Start** ▶️
-
-💡 **Dica:** Se o AVD Manager não aparecer, acesse via terminal:
-```sh
-cd ~/Android/Sdk/emulator
-./emulator -list-avds  # Lista os emuladores disponíveis
-./emulator -avd NOME_DO_EMULADOR
-```
-
----
-
-### 2️⃣ Iniciar o Projeto Expo
-
-1. Navegue até a pasta do projeto 📂
+1. Se ainda não tem um projeto, crie um com Create React App:
+   ```sh
+   npx create-react-app meu-projeto
+   cd meu-projeto
+   ```
+2. Se já tem um projeto, navegue até a pasta do projeto:
    ```sh
    cd caminho/do/projeto
    ```
-2. Instale as dependências 🔄
-   ```sh
-   npm install
-   ```
-   ou, se estiver usando Yarn:
-   ```sh
-   yarn install
-   ```
 
 ---
 
-### 3️⃣ Iniciar o Servidor Expo
+### 2️⃣ Instalar Dependências
 
-O **Expo Dev Server** precisa estar rodando antes de iniciar o aplicativo:
+Se ainda não instalou as dependências do projeto, execute:
 ```sh
-npx expo start
+npm install
 ```
-
-Isso abrirá uma interface no navegador onde você pode escolher rodar no **Emulador Android**, **iOS** (se estiver no Mac) ou em um dispositivo físico. ⚡
+ou, se estiver usando Yarn:
+```sh
+yarn install
+```
 
 ---
 
-### 4️⃣ Rodar o Aplicativo no Emulador
-Com o emulador ativo, pressione **"Run on Android device/emulator"** na interface do Expo ou execute:
+### 3️⃣ Iniciar o Servidor de Desenvolvimento
+
+Para rodar o projeto localmente, execute:
 ```sh
-npx expo run:android
+npm start
+```
+ou
+```sh
+yarn start
 ```
 
-🔄 Aguarde a compilação e pronto! O app será iniciado no emulador. 🎉
+Isso abrirá automaticamente o navegador em `http://localhost:3000/`, onde você verá seu app React.js rodando. 🎉
 
 ---
 
 ## 🛠️ Possíveis Erros e Soluções
 
-❌ **Erro: "SDK location not found"**
-🔹 Solução: Configure o caminho do SDK no `local.properties` do Android Studio:
-```
-sdk.dir=/Users/seu_usuario/Library/Android/sdk  # Mac/Linux
-sdk.dir=C:\Users\seu_usuario\AppData\Local\Android\Sdk  # Windows
+❌ **Erro: "Port 3000 already in use"**
+🔹 Solução: Tente rodar o projeto em outra porta:
+```sh
+PORT=3001 npm start
 ```
 
-❌ **Erro: "No connected devices!"**
-🔹 Solução: Certifique-se de que o emulador está ativo ou conecte um dispositivo físico com **Expo Go** instalado.
+❌ **Erro: "Module not found"**
+🔹 Solução: Reinstale as dependências do projeto:
+```sh
+rm -rf node_modules package-lock.json && npm install
+```
+
+❌ **Erro: "Browserslist: caniuse-lite is outdated"**
+🔹 Solução: Atualize o banco de dados do Browserslist:
+```sh
+npx update-browserslist-db@latest
+```
 
 ---
 
@@ -83,12 +79,12 @@ sdk.dir=C:\Users\seu_usuario\AppData\Local\Android\Sdk  # Windows
 
 | Comando | Descrição |
 |---------|------------|
-| `npx expo start` | Inicia o servidor do Expo 🚀 |
-| `npx expo run:android` | Roda o app no emulador 🤖 |
-| `adb devices` | Lista os dispositivos conectados 📱 |
-| `npx expo logs` | Mostra logs do app no terminal 📜 |
+| `npm start` | Inicia o servidor de desenvolvimento 🚀 |
+| `npm run build` | Gera a versão otimizada para produção 📦 |
+| `npm test` | Roda os testes configurados 🧪 |
+| `npm run lint` | Verifica possíveis erros de código 🔍 |
 
 ---
 
-💡 **Agora você está pronto para rodar seu app Expo no emulador!** 🚀
+💡 **Agora você está pronto para rodar seu projeto React.js no navegador!** 🚀
 
